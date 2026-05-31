@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <title>Zoznam autorov</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+<h1>Zoznam autorov</h1>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Meno</th>
+        <th>Bio</th>
+    </tr>
+
+    {% for author in authors %}
+    <tr>
+        <td>{{ author.author_id }}</td>
+        <td>{{ author.name }}</td>
+        <td>{{ author.bio }}</td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+</body>
+</html>
